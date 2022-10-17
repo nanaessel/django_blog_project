@@ -1,0 +1,113 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Rozybite Foods and Catering</title>
+    <meta name="description" content="django blog" />
+    <meta name="keywords" content="django, blog" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+  </head>
+  <body>
+    <!-- <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10">
+      <div class="nav-left">
+        <h1><a href="{% url 'home' %}">Django blog</a></h1>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="nav-right">
+        <a href="{% url 'post_new' %}">+ New Blog Post</a>
+      </div>
+    </div>
+    </div>
+    </div>
+    </header> -->
+    
+    <div>
+   
+    </div>
+
+
+
+
+    <div class="container-fluid bg-dark py-3">
+<div class="row">
+  <div class="col-md-3"  style="display: flex;gap: 10px;><p class="text-light">
+    {% if user.is_authenticated %}
+    <p class="text-light">Hi {{ user.username }}!</p>
+    <th><a class="text-light" href="{% url 'logout' %}">Log out</a></th>
+    {% else %}
+    <th><a class="text-light" href="{% url 'login' %}">Log In</a></th>
+    |<a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %} 
+  </p></div>
+  <div class="col-md-9"><p class="text-light">
+    <a class="text-light" style="margin-right: 10px;float:right" href="{% url 'post_new' %}">+ New Blog Post</a>
+    </p></div>
+</div>
+
+
+
+    </div>
+
+     
+
+<main>  
+<section>
+  <article>
+    <div class="jumbotron text-center">
+     
+      <h1><a href="{% url 'home' %}">Rozybite Foods and Catering</a></h1>
+      {% comment %} <p>Food Ingredients</p>  {% endcomment %}
+    </div>
+  
+<div class="container">
+<figure class="figure-img img-fluid">
+<!-- <img class="img-thumbnail"  src="image/healthy-food-selection-healthy-food-selection-fruits-vegetables-seeds-superfood-cereals-gray-background-121936825.jpeg" alt="" width=""> -->
+<!-- <figcaption class="figure-caption">Food Ingredients</figcaption> -->
+
+</figure>
+{% block content %}
+
+{% endblock content %}
+
+
+
+<!-- 
+<p>The blog/website's name Rozybite is derived from mine late mother's name first name, Rosebella. Because she taught us the skills we've acquired today. I remember when we were kids, we used to help her when she is baking bread, cakes, scones and cooking all kinds of meals. Although she was a civil servant, 
+she was able to combine catering to her job. So, I decided to name my catering service after her to honor her.</p>
+<p>It's started as catering for just family events, and base on positive reviews the guest started asking for our service and recommending us to other people which later we decided to make it official by catering for public events as well.</p>
+
+<p>We cater for all kind of programs, that is we bake cakes and pastries for all event and cook delicious meals for all events as well. We also pack stews and soups for families who are too busy or tried to cook. We want to realize the stress of going to the market to buy groceries and later cook, which is too much work for a working mother.</p>
+<aside>
+  <p>From time to time we also post food recipes for our cherished customers to try at home. Rosybite is your one place for all your food needs.</p>
+  </aside> -->
+<!-- <details>
+  <summary>Read more</summary>
+  <p>Rozybite catering service is to provide excellent service, healthy, nutritious and hygienically prepared meals for its client/customers.</p>
+  <p>Food services for Weddings, Funeral, Birthday Parties, Graduations, Office occasions and more ...</p>
+  <p>Cake and pastries for Weddings, Birthday, Graduations, Office occasions and more..</p>
+  <p>Beginner's Baking Class</p>
+  <p>Bake from scratch: Buttercream & Whipped cream techniques, Fondant, Pastries and more...</p>
+  <p>Food Recipes</p>
+</details> -->
+
+
+</div>
+
+
+
+</article>
+
+
+
+</section>
+</main>
+<footer>
+
+</footer>
+  </body>
+</html>
